@@ -7,7 +7,7 @@ define('PASSWORD', '');
 
 class Connect
 {
-    protected $conn;
+    private $conn;
 
     public function __construct()
     {
