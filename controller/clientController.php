@@ -110,4 +110,14 @@ class clientController
     {
         return $this->model->selectById($id);
     }
+
+    public function delete()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id']) && $_GET['a'] === 'remover') {
+            $id = $_POST['id'];
+            $this->model->delete($id);
+            header('Location: index.php');
+            exit();
+        }
+    }
 }

@@ -16,6 +16,7 @@
         <tbody>
             <?php
             $clientController = new clientController();
+            $clientController->delete();
             $clients = $clientController->select();
             foreach ($clients as $data) : ?>
                 <tr>
@@ -25,7 +26,10 @@
                     <td><?= $data['phone']; ?></td>
                     <td>
                         <a href="./edit.php?id=<?= $data['id']; ?>" class="btn btn-primary btn-sm">Editar</a>
-                        <a href="./remove.php?id=<?= $data['id']; ?>" class="btn btn-danger btn-sm">Remover</a>
+                        <form action="?a=remover" method="POST" style="display: inline;">
+                            <input type="hidden" name="id" value="<?= $data['id']; ?>">
+                            <button type="submit" name="delete" class="btn btn-danger btn-sm">Remover</button>
+                        </form>
                     </td>
                 </tr>
             <?php endforeach; ?>

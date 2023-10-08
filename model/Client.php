@@ -62,4 +62,11 @@ class Client extends Connect
             return false;
         }
     }
+
+    public function delete($id)
+    {
+        $query = $this->getConnection()->prepare("DELETE FROM " . $this->table . " WHERE id = :id");
+        $query->bindParam(":id", $id, PDO::PARAM_INT);
+        $query->execute();
+    }
 }
