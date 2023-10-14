@@ -1,4 +1,11 @@
 <?php
+
+
+require '../vendor/autoload.php';
+$path = dirname(__FILE__, 2);
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable($path);
+$dotenv->load();
+
 class Connect
 {
     private $conn;
