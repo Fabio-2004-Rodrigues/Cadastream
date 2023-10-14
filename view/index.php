@@ -1,5 +1,5 @@
-<?php include('./layouts/header.php') ?>
-<?php include('../controller/clientController.php') ?>
+<?php include(__DIR__ . './layouts/header.php') ?>
+<?php include(__DIR__ . '../controller/clientController.php') ?>
 
 <div class="container mt-5">
     <h2 class="text-center">Registros de Clientes</h2>
@@ -38,4 +38,4 @@
     <a href="./create.php" class="btn btn-success">Criar Novo</a>
 </div>
 
-<?php include('./layouts/footer.php') ?>
+<?php include(__DIR__ . './layouts/footer.php') ?>
